@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.1",
+  "synthetic": true,
+  "seed": 42,
+  "targets": {"train": ["MOCK_TRAIN_A", "MOCK_TRAIN_B"], "val": ["MOCK_VAL_A"], "test": ["MOCK_TEST_A", "MOCK_TEST_B"]},
+  "control_cell_ids": {"train": ["MOCK_CTRL_1"], "val": ["MOCK_CTRL_2"], "test": ["MOCK_CTRL_3"]}
+}

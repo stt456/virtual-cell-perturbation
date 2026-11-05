@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1",
+  "project": "virtual-cell-perturbation",
+  "seeds": [42, 123, 2026],
+  "data": {
+    "name": "Replogle K562 Essential Perturb-seq",
+    "source_url": "https://dataverse.harvard.edu/api/access/datafile/7458695",
+    "raw_path": "data/raw/replogle_k562.h5ad",
+    "min_cells_per_target": 20,
+    "n_output_genes": 2000,
+    "raw_perturbation_column": null,
+    "raw_control_labels": null,
+    "expression_space": null,
+    "normalization_verified": false,
+    "control_matching": "within_split_and_batch_when_available"
+  },
+  "split": {"unit": "target_gene", "train": 0.7, "val": 0.15, "test": 0.15},
+  "features": {
+    "pca_components": 50,
+    "pca_fit_cells": "train_control_only",
+    "standardizer_fit_targets": "train_only",
+    "ablations": ["pca", "mean_detection", "combined"],
+    "missing_target_fallback": "train_mean_delta"
+  },
+  "models": {
+    "ridge": {"alpha_candidates": [0.1, 1.0, 10.0, 100.0]},
+    "mlp": {"hidden_dim_candidates": [64, 128], "learning_rate_candidates": [0.001, 0.0003], "max_epochs": 200, "early_stopping_patience": 20},
+    "reference": {"preferred": "gears", "fallback": "knn", "k_candidates": [3, 5, 10, 20]}
+  },
+  "evaluation": {"top_k": 20, "macro_unit": "target_gene", "bootstrap_repeats": 1000},
+  "paths": {"processed": "data/processed", "splits": "data/splits", "results": "results", "figures": "figures", "reports": "reports"}
+}

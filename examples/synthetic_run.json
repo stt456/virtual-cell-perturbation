@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "synthetic": true,
+  "seed": 42,
+  "model": "interface_example_only",
+  "expression_space": "synthetic_arbitrary_units",
+  "gene_ids": ["MOCK_GENE_1", "MOCK_GENE_2", "MOCK_GENE_3"],
+  "note": "仅演示接口；不是真实生物数据、训练结果或评价成绩。"
+}
