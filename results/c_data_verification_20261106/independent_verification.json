@@ -1,0 +1,323 @@
+{
+  "status": "PASS",
+  "source_sha256": "550fde89ac85c258c9fd517638fe34fb42c0e748c9305fe6355761a2bb754170",
+  "verification_script_sha256": "bebc728cf059004c17247daa3f52df4f016ca9a387ad32a5bff595795765c497",
+  "installed_data_hashes_checked": 23,
+  "numeric_report_matches": {
+    "shape": [
+      162751,
+      5000
+    ],
+    "conditions": 1093,
+    "controls": 10691,
+    "kept_cells": 162648,
+    "excluded_cells": 103,
+    "targets_before_filter": 1092,
+    "targets_after_filter": 1086,
+    "duplicate_gene_symbols": 1,
+    "missing_conditions": 0
+  },
+  "raw_shape": null,
+  "layers": [],
+  "obs_columns": [
+    "condition",
+    "cell_type",
+    "cov_drug_dose_name",
+    "dose_val",
+    "control",
+    "condition_name"
+  ],
+  "upstream_uns_keys_not_used_for_fitting": [
+    "hvg",
+    "non_dropout_gene_idx",
+    "non_zeros_gene_idx",
+    "rank_genes_groups_cov_all",
+    "top_non_dropout_de_20",
+    "top_non_zero_de_20"
+  ],
+  "source_matrix_scan": {
+    "finite": true,
+    "min_stored": 0.1829564869403839,
+    "max_stored": 8.3939847946167,
+    "stored_entries": 316427573,
+    "noninteger_stored_entries": 316427549,
+    "explicit_zeros": 0
+  },
+  "symbol_coverage": 411,
+  "unique_symbol_coverage": 411,
+  "ambiguous_targets": [],
+  "missing_target_count": 675,
+  "coverage_by_split": [
+    {
+      "seed": 42,
+      "split": "train",
+      "targets": 760,
+      "symbol_present": 284,
+      "unique_mapping": 284,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 476,
+      "control_cells": 7483
+    },
+    {
+      "seed": 42,
+      "split": "val",
+      "targets": 162,
+      "symbol_present": 61,
+      "unique_mapping": 61,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 101,
+      "control_cells": 1603
+    },
+    {
+      "seed": 42,
+      "split": "test",
+      "targets": 164,
+      "symbol_present": 66,
+      "unique_mapping": 66,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 98,
+      "control_cells": 1605
+    },
+    {
+      "seed": 123,
+      "split": "train",
+      "targets": 760,
+      "symbol_present": 279,
+      "unique_mapping": 279,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 481,
+      "control_cells": 7483
+    },
+    {
+      "seed": 123,
+      "split": "val",
+      "targets": 162,
+      "symbol_present": 59,
+      "unique_mapping": 59,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 103,
+      "control_cells": 1603
+    },
+    {
+      "seed": 123,
+      "split": "test",
+      "targets": 164,
+      "symbol_present": 73,
+      "unique_mapping": 73,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 91,
+      "control_cells": 1605
+    },
+    {
+      "seed": 2026,
+      "split": "train",
+      "targets": 760,
+      "symbol_present": 302,
+      "unique_mapping": 302,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 458,
+      "control_cells": 7483
+    },
+    {
+      "seed": 2026,
+      "split": "val",
+      "targets": 162,
+      "symbol_present": 50,
+      "unique_mapping": 50,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 112,
+      "control_cells": 1603
+    },
+    {
+      "seed": 2026,
+      "split": "test",
+      "targets": 164,
+      "symbol_present": 59,
+      "unique_mapping": 59,
+      "ambiguous_mapping": 0,
+      "symbol_absent": 105,
+      "control_cells": 1605
+    }
+  ],
+  "split_summary": [
+    {
+      "seed": 42,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 116178,
+      "val_cells": 24156,
+      "test_cells": 22314,
+      "hvg": 2000
+    },
+    {
+      "seed": 123,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 110196,
+      "val_cells": 26226,
+      "test_cells": 26226,
+      "hvg": 2000
+    },
+    {
+      "seed": 2026,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 115799,
+      "val_cells": 23979,
+      "test_cells": 22870,
+      "hvg": 2000
+    }
+  ],
+  "independent_aggregation": [
+    {
+      "seed": 42,
+      "condition": "ctrl_train",
+      "cells": 7483,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 42,
+      "condition": "AAMP",
+      "cells": 76,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 42,
+      "condition": "ctrl_val",
+      "cells": 1603,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 42,
+      "condition": "AARS",
+      "cells": 38,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 42,
+      "condition": "ctrl_test",
+      "cells": 1605,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 42,
+      "condition": "ABCE1",
+      "cells": 207,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "ctrl_train",
+      "cells": 7483,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "AAMP",
+      "cells": 76,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "ctrl_val",
+      "cells": 1603,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "AARS",
+      "cells": 38,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "ctrl_test",
+      "cells": 1605,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 123,
+      "condition": "AATF",
+      "cells": 254,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "ctrl_train",
+      "cells": 7483,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "AAMP",
+      "cells": 76,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "ctrl_val",
+      "cells": 1603,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "ABCE1",
+      "cells": 207,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "ctrl_test",
+      "cells": 1605,
+      "max_abs_error_float64": 4.440892098500626e-16
+    },
+    {
+      "seed": 2026,
+      "condition": "ALYREF",
+      "cells": 141,
+      "max_abs_error_float64": 4.440892098500626e-16
+    }
+  ],
+  "max_independent_aggregation_error": 4.440892098500626e-16,
+  "independent_hvg_precision_check": [
+    {
+      "seed": 42,
+      "independent_float64_overlap": 2000,
+      "same_order": false,
+      "max_abs_train_mean_difference": 3.8689611092657117e-07,
+      "max_abs_train_variance_difference": 1.8552620537071185e-06
+    },
+    {
+      "seed": 123,
+      "independent_float64_overlap": 2000,
+      "same_order": false,
+      "max_abs_train_mean_difference": 3.5714457746749417e-07,
+      "max_abs_train_variance_difference": 2.594851851611679e-06
+    },
+    {
+      "seed": 2026,
+      "independent_float64_overlap": 2000,
+      "same_order": false,
+      "max_abs_train_mean_difference": 3.549847553685481e-07,
+      "max_abs_train_variance_difference": 1.4230186700103786e-06
+    }
+  ],
+  "b_original_sources_unchanged": true,
+  "all_three_interface_packages_passed": true,
+  "limitations": [
+    "No original B aggregate files were supplied for bytewise comparison.",
+    "Normalization provenance and upstream gene-selection scope remain unverified.",
+    "Aggregation recheck covers 18 condition/seed pairs, not every target.",
+    "This is data validation, not model training or evaluation."
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "pandas": "2.2.3",
+    "h5py": "3.12.1",
+    "anndata": "0.10.9"
+  }
+}
