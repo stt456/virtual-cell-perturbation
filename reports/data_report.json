@@ -1,0 +1,50 @@
+{
+  "shape": [
+    162751,
+    5000
+  ],
+  "conditions": 1093,
+  "controls": 10691,
+  "kept_cells": 162648,
+  "excluded_cells": 103,
+  "targets_before_filter": 1092,
+  "targets_after_filter": 1086,
+  "duplicate_gene_symbols": 1,
+  "missing_conditions": 0,
+  "matrix": "sparse CSR; sampled values non-integer, consistent with transformed expression; normalization and log1p provenance not independently established",
+  "guide_batch": "not provided as standalone fields; barcode suffix is not assumed to be batch",
+  "hvg": "within each training split, rank variance/mean after log1p and mean-bin z-score; computed on input expression, not Scanpy Seurat HVG",
+  "upstream_leakage": "GEARS distribution already selected 5000 genes upstream; upstream HVG selection may use all cells. This prevents a strictly leakage-free benchmark.",
+  "split_summary": [
+    {
+      "seed": 42,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 116178,
+      "val_cells": 24156,
+      "test_cells": 22314,
+      "hvg": 2000
+    },
+    {
+      "seed": 123,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 110196,
+      "val_cells": 26226,
+      "test_cells": 26226,
+      "hvg": 2000
+    },
+    {
+      "seed": 2026,
+      "train_targets": 760,
+      "val_targets": 162,
+      "test_targets": 164,
+      "train_cells": 115799,
+      "val_cells": 23979,
+      "test_cells": 22870,
+      "hvg": 2000
+    }
+  ]
+}
