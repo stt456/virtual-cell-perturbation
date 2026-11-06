@@ -1,0 +1,18 @@
+{
+  "archive_filename": "replogle_k562_essential.zip",
+  "archive_bytes": 669703049,
+  "archive_sha256": "e769c89aa876061fdb3ac02a8de274f19a741a4f95decf14a52fd621d1eea319",
+  "archive_md5": "84eed779531de88f83d3eb16a773a261",
+  "matches_B_archive_sha256": true,
+  "matches_official_md5": true,
+  "files": [
+    {
+      "path": "data/replogle_k562_essential/perturb_processed.h5ad",
+      "bytes": 2898717719,
+      "sha256": "550fde89ac85c258c9fd517638fe34fb42c0e748c9305fe6355761a2bb754170",
+      "matches_B_h5ad_sha256": true,
+      "zip_crc_verified": true
+    }
+  ],
+  "extraction_seconds": 11.27
+}

@@ -1,0 +1,94 @@
+{
+  "data/processed/cell_metadata.csv": {
+    "bytes": 5520508,
+    "sha256": "e678558f447d3b7ada80db319c848732a826af752d70a1f90086c502964e7f8e"
+  },
+  "data/processed/expression.h5ad": {
+    "bytes": 678201492,
+    "sha256": "086e9a3bbf329757040b0b8e242ca01bad60bc390a5698690df7f3627ab338d8"
+  },
+  "data/processed/seed_123/C_train_val.npz": {
+    "bytes": 25593558,
+    "sha256": "515264827b3b68687550d6516e9151c5d76e65d41a2e50b17f709d699f3b2e38"
+  },
+  "data/processed/seed_123/D_test.npz": {
+    "bytes": 4589590,
+    "sha256": "d23219f51bce0922c52ff5ea81a86607c9d563f052eb7d43169e2dcc931ce001"
+  },
+  "data/processed/seed_123/aggregates.npz": {
+    "bytes": 32229831,
+    "sha256": "7b81643feffb3358ef3abe2f245a87ad66528c6ab303212db9ecb9ac43669358"
+  },
+  "data/processed/seed_123/metadata.json": {
+    "bytes": 863,
+    "sha256": "d09c5513060d9def974d73c345cc8cc675c4ecfa8699957b6744a214e068d510"
+  },
+  "data/processed/seed_123/output_gene_mapping.csv": {
+    "bytes": 158657,
+    "sha256": "933b6f0b79c8a0e63f808d6e4dc7ab21f8dd289c9a590a6641cdf468b02963c2"
+  },
+  "data/processed/seed_123/output_genes.txt": {
+    "bytes": 13100,
+    "sha256": "e43c8b3ff3b12529f0051522decd52efe055a23bd72645c4490e7bf37caf35e0"
+  },
+  "data/processed/seed_2026/C_train_val.npz": {
+    "bytes": 25626507,
+    "sha256": "334b7545d00a4984f9de4d7ec98c52da4e5cb09316e8e1767fb361879d1ff46d"
+  },
+  "data/processed/seed_2026/D_test.npz": {
+    "bytes": 4564681,
+    "sha256": "c59279793d3fcb7ca8aa74761389a77eb641348add50a66513df34dd1b6ead3a"
+  },
+  "data/processed/seed_2026/aggregates.npz": {
+    "bytes": 32233249,
+    "sha256": "cd3e92d99d43b33483bd6e01a0605436157a155cf9764db628b019dfab3416ce"
+  },
+  "data/processed/seed_2026/metadata.json": {
+    "bytes": 864,
+    "sha256": "ce8b42b8760fa16a25acfd75af4a99d9a9bd7f08767e744bd03f683c085d920e"
+  },
+  "data/processed/seed_2026/output_gene_mapping.csv": {
+    "bytes": 158615,
+    "sha256": "2382e1ca92780bf8fc03fc916ded7117e7da884622743fb2469d13b82df4b483"
+  },
+  "data/processed/seed_2026/output_genes.txt": {
+    "bytes": 13075,
+    "sha256": "dd7d89660be14d61b67e22255e76f04a32b79fba4e10a8e6953563eea7a6032a"
+  },
+  "data/processed/seed_42/C_train_val.npz": {
+    "bytes": 25618249,
+    "sha256": "544a0ca26b9c69cc42f95a8ffc20738cadfbf058b914bc33b4149927db364c69"
+  },
+  "data/processed/seed_42/D_test.npz": {
+    "bytes": 4567713,
+    "sha256": "2be7897131ab10597be86cb4f8f7b345d8808cc319f6195dbf4f75cc5ba52ddb"
+  },
+  "data/processed/seed_42/aggregates.npz": {
+    "bytes": 32233996,
+    "sha256": "46c1bd56baa3d34741c662fc983214546e668cf7737b9134f43f77dcd1fd084e"
+  },
+  "data/processed/seed_42/metadata.json": {
+    "bytes": 862,
+    "sha256": "d8b2c18119cb1fdffd5eda21618c828e428a43f9e48e9347f0faf9cdbecc2453"
+  },
+  "data/processed/seed_42/output_gene_mapping.csv": {
+    "bytes": 158715,
+    "sha256": "bc66511819124566d84bd4e5c246cd0b53d52d0c764a29e99b96b917dad5f2c5"
+  },
+  "data/processed/seed_42/output_genes.txt": {
+    "bytes": 13116,
+    "sha256": "43b9e756dd619b2080cf86fde0fa8e203dced0495e5d8318fcf4a9df1c82e117"
+  },
+  "data/splits/seed_123.json": {
+    "bytes": 324664,
+    "sha256": "8a0e4e32f2fe9eac350f5495c5f25d1cd7590e8f89065337b410f1ba0a5e448d"
+  },
+  "data/splits/seed_2026.json": {
+    "bytes": 324665,
+    "sha256": "9f58cd5b60ff919d5e36b2ecfba758e12f267a273f250cf993808142ce76f2d5"
+  },
+  "data/splits/seed_42.json": {
+    "bytes": 324663,
+    "sha256": "6d9c13974cd3345a2bf6ddd9f241650b2c96a7ce9d6fc1360166ee7ac28988d8"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "signature": {
+    "mode": "formal",
+    "config": {
+      "schema_version": "0.1",
+      "experiment": "c_v1_20261106",
+      "seeds": [
+        42,
+        123,
+        2026
+      ],
+      "representations": [
+        "pca",
+        "mean_detection",
+        "combined"
+      ],
+      "features": {
+        "pca_components": 50,
+        "center": true,
+        "scale_genes": false,
+        "whiten": false,
+        "solver": "randomized",
+        "iterated_power": 4
+      },
+      "ridge": {
+        "alphas": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ]
+      },
+      "mlp": {
+        "hidden_dims": [
+          64,
+          128
+        ],
+        "learning_rates": [
+          0.001,
+          0.0003
+        ],
+        "dropout": 0.1,
+        "weight_decay": 0.0001,
+        "batch_size": 64,
+        "max_epochs": 200,
+        "patience": 20,
+        "residual_to_train_mean": true
+      },
+      "selection": {
+        "metric": "validation_macro_mse",
+        "tie_atol": 1e-12
+      },
+      "evaluation": {
+        "top_k": 20,
+        "bootstrap_repeats": 1000,
+        "implementation": "C diagnostic v1; pending independent D review"
+      },
+      "runtime": {
+        "cpu_threads": 4,
+        "device": "cuda",
+        "deterministic": true
+      },
+      "paths": {
+        "inputs": "data/processed/c_inputs",
+        "features": "data/processed/c_features",
+        "results": "results/c_v1_20261106"
+      }
+    },
+    "source_tree_sha256": "7ab2e4f1075a52ed750e12d9f5f2c018479807525f96ad57e66efb32694d6638"
+  },
+  "started_utc": "2026-11-06T10:19:51.825621+00:00",
+  "provenance": {
+    "git_commit": "3bf46bab060e5e002acd4758ecf2a2edcc62f0b2",
+    "source_tree_sha256": "7ab2e4f1075a52ed750e12d9f5f2c018479807525f96ad57e66efb32694d6638",
+    "source_files": {
+      "configs/c_models.json": "ebdae5e96f734edd0a9e7df286c361cbf370a0662595f627ac7138b331619552",
+      "scripts/build_c_features.py": "026e2995f585fca23b6846588a76e1059b79022340e8a18c1ec736101ed8544e",
+      "scripts/check_framework.py": "b6ad045668803529578c90071c469904e3fa132a46e9cc694a7b716637e31171",
+      "scripts/evaluate_c_results.py": "e91e9aa93c680fea376b9ac0a4acc80c3b1640c08e624c2b7dd3be128f9c97f0",
+      "scripts/prepare_c_inputs.py": "353d640f7758a5a7ca03044cde1161a53309d9356533321e7e712baca604f4d0",
+      "scripts/report_c_results.py": "0ab92c93dd77a3cf084556cbd3480254492a861e1f15cc61091a69b5dc4c7a04",
+      "scripts/run_c_models.py": "6899407e970e59abd398ade79e5f02be5d4764db19442060b500aa8114c05754",
+      "scripts/verify_c_data.py": "bebc728cf059004c17247daa3f52df4f016ca9a387ad32a5bff595795765c497",
+      "src/audit_b.py": "c4c16168874480edb0d2d555c23d0d64152807907c0e91ae4336c638f006f331",
+      "src/c_common.py": "9c2a977a11c60f32e4d821be859358debcda20cde4ce774ee695102567ed3ea5",
+      "src/download_b.py": "e634ccf4dfb85b6d1a49cc19165781376873e8a9d03ca44c61787575f1fdea1a",
+      "src/evaluation/c_metrics.py": "7116c2752b4db7285e1a3b209c22bbe9a0181782b95c0aaf880b48d36440034d",
+      "src/export_repo_interface.py": "e0b1132a4cfc190457fb550512cb3119a21469924b7ce72a5ae6882037fe6677",
+      "src/features/control_features.py": "732965e724d32d9143cf648f71edffcb73cc5468b7616760d1ae95012b2275e1",
+      "src/models/c_models.py": "c4d8aff36426fe64ce0dc3506baff5c10c4a356e4d040df0291be20bb7c22090",
+      "src/process_b.py": "78f5172e3954e00f4b06bae3919da100423fedabca55fd3478fc7e9431d8f358",
+      "src/report_b.py": "2fbbe720665de836117516110c9bc16813dedca7284466166e3e38847cceaa96",
+      "src/separate_labels.py": "6c83d93ac4ece3cd957661a6992a717dc3f210504fafa27aa77f97c767b01a2a",
+      "src/validate_repo_export.py": "99f1ce8f993724c08804cf982c2edebe0bba6f6e908b6fd10ba7e7ae6bd925a8",
+      "tests/test_c_pipeline.py": "b1b51390dad6fbac05e0a6ba468bc301bb5702979b231ca2f29e92e4023b736c"
+    }
+  },
+  "environment": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.10.0",
+    "pandas": "2.3.3"
+  },
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+  "device_name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "command": "python scripts/run_c_models.py --mode formal --device cuda",
+  "synthetic": false,
+  "test_labels_accessed": false
+}

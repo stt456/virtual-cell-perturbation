@@ -1,0 +1,11 @@
+# C data preparation, models and diagnostic evaluation. Use a suitable PyTorch
+# CPU/CUDA build for your machine. Tested versions are recorded with each run.
+numpy>=1.26,<3
+scipy>=1.11,<2
+pandas>=2.1,<3
+scikit-learn>=1.4,<2
+h5py>=3.10,<4
+anndata>=0.10,<0.11
+matplotlib>=3.8,<4
+torch>=2.6,<3
+threadpoolctl>=3.1,<4

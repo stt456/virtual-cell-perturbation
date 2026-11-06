@@ -2,7 +2,7 @@
 
 利用公开 Perturb-seq 数据，研究目标基因的表达结构信息能否帮助模型预测未见基因受到 CRISPRi 抑制后的群体平均转录响应。主模型为 Ridge 和 MLP，参考模型计划优先尝试 GEARS，环境适配困难时使用基因表示 kNN。
 
-本仓库当前完成 A 的“11 月 8 日｜确定方案和接口”阶段交付：四篇文献对照笔记、统一目录、配置、协作说明及接口草案。真实数据、模型训练和正式评测等待 B—E 后续交付。
+仓库已包含 A 的框架、B 的数据处理流程、E 的分析规划，以及 C 的基因表示、Ridge/MLP、三种子消融与诊断评估结果。原始数据和大型运行产物通过独立文件渠道交接；A 的参考方法、D 的独立评测和 E 的结果解释继续按分工接入。
 
 项目仓库：https://github.com/stt456/virtual-cell-perturbation
 
@@ -14,6 +14,9 @@
 - [协作与阶段验收](docs/collaboration.md)：分工、交付顺序和检查清单。
 - [统一配置](configs/default.json)：种子、划分、模型候选参数与路径。
 - [GitHub 上传说明](docs/github_setup.md)：远程仓库连接步骤。
+- [C 运行与交付说明](docs/c_models.md)：数据前提、特征、训练、冻结和预测接口。
+- [C 实际结果](reports/c_results.md)：72 个候选实验、三种子结果与限制。
+- [C 数据核验](reports/c_data_verification_20261106.md)：源文件哈希、覆盖率和独立复算。
 
 ## 任务定义
 
@@ -49,10 +52,12 @@ reports/              文献、数据与结果报告
 
 ```powershell
 python scripts/check_framework.py
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p test_interfaces.py -v
 ```
 
 这两条命令检查配置、目录和模拟接口，不能替代真实数据实验。
+
+C 的全部模型测试需要科学计算与 PyTorch 依赖：`python -m pip install -r requirements-c.txt`，然后运行 `python -m unittest discover -s tests -v`。C 的实际运行已在 Linux/WSL 验证；环境和数据前提见 `docs/c_models.md`。
 
 ## 实验环境
 
@@ -87,8 +92,8 @@ python -m venv .venv
 |---|---|---|
 | A | 文献、仓库、README、目录和接口协调 | 参考模型实验、端到端集成 |
 | B | 下载与检查数据，提交概览 | 预处理、划分、聚合和数据字典 |
-| C | 确定输入输出并用模拟数据跑通原型 | 基因表示、Ridge、MLP 和消融 |
+| C | 表示、Ridge/MLP、三种子消融及预测交付 | 配合 D 独立核验与组内集成 |
 | D | 确定基线指标并用模拟数据验证 | 三种子统一评测和统计分析 |
 | E | 生物背景、基因集来源和案例规则 | 通路分析、图表和汇报 |
 
-当前未产生真实实验分数。文献里的结果属于原论文，不能填入本项目结果表。
+本项目的 C 实际分数见 `reports/c_results.md`，目前属于 C 诊断评估，尚不能称为 D 已独立验收。文献里的结果属于原论文，不混入本项目结果表。

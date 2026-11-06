@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-11-06T10:25:35.598804+00:00",
+  "freeze_sha256": "4ccf7c3a7642513767f9e69339b83c3afe26c9558d914f3d7e7d9931e00b913f",
+  "source_changes": {
+    "tests/test_c_evaluator_precision.py": {
+      "original": null,
+      "corrected": "57b9f2f2f35bcff6ff2407bfc383c3e6e8cb07801f7326186f738cf71a880b0d"
+    },
+    "scripts/evaluate_c_results.py": {
+      "original": "e91e9aa93c680fea376b9ac0a4acc80c3b1640c08e624c2b7dd3be128f9c97f0",
+      "corrected": "b0fe378a225a802eafed16b3e408cb2b72fd87f83f5b47e229960119e22049bc"
+    }
+  },
+  "reason": "Exact equality rejected float64 means differing only by C/F memory-layout summation order. Compare independently recomputed means using rtol=1e-12 and atol=1e-14, then preserve the frozen mean for predictions and residual metrics.",
+  "observed_max_abs_mean_difference": 4.440892098500626e-16,
+  "training_models_hyperparameters_predictions_unchanged": true,
+  "first_evaluation_failed_before_any_metric_rows": true,
+  "test_scores_used_for_this_fix": false
+}
