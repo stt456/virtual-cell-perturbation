@@ -1,0 +1,11 @@
+{
+  "artifact_integrity_passed": true,
+  "n_hashes_checked": 255,
+  "prediction_contracts_passed": true,
+  "reported_metric_aggregation_passed": true,
+  "b_label_hashes_verified": false,
+  "independent_metric_recalculation": false,
+  "control_split_checked": false,
+  "train_mean_recomputed_from_labels": false,
+  "note": "Only submitted files and declared metadata are checked without B labels."
+}

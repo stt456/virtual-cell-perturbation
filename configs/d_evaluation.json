@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "evaluation": {
+    "macro_unit": "target_gene",
+    "top_k": 20,
+    "top_k_tie_break": "absolute_delta_descending_then_gene_id_ascending",
+    "bootstrap_repeats": 10000,
+    "bootstrap_unit": "paired_target_within_seed_and_split",
+    "bootstrap_random_seed": 1729,
+    "across_seed_std_ddof": 1,
+    "report_subsets": ["all", "available", "unavailable", "strength_weak", "strength_medium", "strength_strong"],
+    "missing_label_policy": "not_scored",
+    "independent_mode_requires_frozen_sha256": true
+  },
+  "inputs": {
+    "handoff_experiment": "results/c_v1_20261106",
+    "independent_test_labels": "data/processed/seed_{seed}/D_test.npz",
+    "independent_split_alternatives": ["data/processed/c_inputs/seed_{seed}/split.json", "data/splits/seed_{seed}.json"]
+  },
+  "outputs": {
+    "full_local": "results/d_v1_20261110",
+    "shareable_report": "reports/d_results.md",
+    "interactive_report": "reports/d_results.html",
+    "summary": "reports/d_summary.csv"
+  }
+}

@@ -38,6 +38,11 @@ results/c_v1_20261106/evaluation/*
 !results/c_v1_20261106/evaluation/summary_by_seed.csv
 !results/c_v1_20261106/evaluation/summary_across_seeds.csv
 !results/c_v1_20261106/evaluation/paired_bootstrap.csv
+!results/d_v1_20261110/
+results/d_v1_20261110/*
+!results/d_v1_20261110/manifest.json
+!results/d_v1_20261110/audit.json
+!results/d_v1_20261110/pending_inputs.json
 *.h5ad
 *.h5
 *.npz

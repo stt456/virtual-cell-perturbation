@@ -91,3 +91,12 @@ cell_id,target_gene,is_control,guide_id,batch
 ## 当前阶段的模拟样例
 
 `examples/synthetic_predictions.csv` 用宽表演示相同顺序的预测矩阵，`examples/synthetic_split.json` 演示目标隔离。它们只验证接口，不是 NPZ 正式交付，也不包含真实数据或成绩。
+
+## D 统一评测实现与当前交付
+
+- 入口：`scripts/run_d_evaluation.py`；指标、IO、统计、图表及报告实现位于 `src/evaluation/`。
+- 输入：C 冻结实验目录中的 `freeze.json`、预测包、模型训练均值、运行元数据与 C 自检评估表。handoff 模式会核对冻结文件 SHA256、预测契约和 C 已报告指标的聚合一致性；不会把缺失的 B 标签替换为零，也不会声称完成独立重算。
+- 独立评测：`--mode independent` 必须找到并匹配 `freeze.json` 内的 B 划分、训练/验证标签、输出基因清单和测试标签哈希；缺失或版本不一致时停止。A 预测通过带逐种子文件哈希的 JSON manifest 加入。
+- 本地完整结果：`results/d_v1_20261110/`，包括逐目标表、分层汇总、bootstrap、核验清单、图表、manifest 和 E 案例交接。该目录遵守仓库规则，不提交大型逐目标产物；仅跟踪小型 `manifest.json`、`audit.json` 和 `pending_inputs.json`。
+- 可共享摘要：`reports/d_summary.csv`、`reports/d_metrics_by_seed.csv`、`reports/d_metrics_across_seeds.csv`、`reports/d_paired_bootstrap.csv`、`reports/d_coverage.csv` 与 `reports/d_scope.json`；图表放在 `figures/d_*.png` 和 `figures/d_*.svg`。
+- 当前范围和运行命令见 `docs/d_evaluation.md`；结果解释见 `reports/d_results.md`。指标定义仍遵循本页上文，缺失相关值保持为空并同时报告有效目标数。

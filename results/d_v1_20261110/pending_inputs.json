@@ -1,0 +1,8 @@
+{
+  "B_test_labels": null,
+  "B_training_labels": null,
+  "A_reference_predictions": null,
+  "missing_means": "not scored; never replaced by zero changes",
+  "independent_evaluation_complete": false,
+  "full_planned_method_comparison_complete": false
+}
