@@ -202,14 +202,24 @@ def score_independently(base, data_root, frozen, a_manifest=None):
                     require(np.array_equal(values, p["delta_pred"]), "independently checked baseline mismatch")
                 rows.extend(evaluate(values, truth, canonical, p["target_ids"], p["gene_ids"],
                                      p["feature_available"], p["used_fallback"], model, seed, split))
-            if a and split == "test":
+            if a:
                 item = a["seeds"][str(seed)]
-                path = (a_manifest.parent / item["predictions"]).resolve()
-                require(sha256(path) == item["sha256"], "A prediction hash mismatch")
+                path_key, hash_key = (("predictions", "sha256") if split == "test" else
+                                      ("validation_predictions", "validation_sha256"))
+                if split == "val" and path_key not in item:
+                    continue
+                path = (a_manifest.parent / item[path_key]).resolve()
+                require(sha256(path) == item[hash_key], "A prediction hash mismatch")
                 p = load_npz(path)
                 validate_prediction(p, targets, genes)
                 require(np.array_equal(p["feature_available"], ref["feature_available"]), "A coverage mask mismatch")
-                rows.extend(evaluate(p["delta_pred"], truth, canonical, p["target_ids"], p["gene_ids"],
+                fallback = p["used_fallback"]
+                require(np.array_equal(fallback, ~p["feature_available"]), "A fallback mask mismatch")
+                require(np.allclose(p["delta_pred"][fallback], mean, rtol=1e-12, atol=1e-14),
+                        "A fallback must match the verified training mean")
+                values = p["delta_pred"].copy()
+                values[fallback] = mean
+                rows.extend(evaluate(values, truth, mean, p["target_ids"], p["gene_ids"],
                                      p["feature_available"], p["used_fallback"], a["model"], seed, split))
                 evidence.append(dict(path=str(path), sha256=item["sha256"]))
     return pd.DataFrame(rows), evidence

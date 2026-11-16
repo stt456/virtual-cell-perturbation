@@ -2,11 +2,14 @@
 
 利用公开 Perturb-seq 数据，研究目标基因的表达结构信息能否帮助模型预测未见基因受到 CRISPRi 抑制后的群体平均转录响应。主模型为 Ridge 和 MLP，参考模型计划优先尝试 GEARS，环境适配困难时使用基因表示 kNN。
 
-仓库已包含 A 的框架、B 的数据处理流程、E 的分析规划、C 的 Ridge/MLP 三种子实验，以及 D 的统一指标实现、交接核验和结果报告。A 的参考模型与 B 的独立测试标签尚未提供；当前 D 报告因此明确标记为对 C 自检逐目标结果的统计复算，不代表独立标签验收。
+仓库包含 B 的数据流程、C 的 Ridge/MLP 实验和 D 的统一评测。A 已完成 kNN 验证与测试，D 使用冻结的 B 标签独立重算了指标。完整交付见下方 kNN 实验报告。
 
 项目仓库：https://github.com/stt456/virtual-cell-perturbation
 
 ## 先看这些文件
+
+- [A 的 kNN 实验报告](reports/a_knn_experiment.md)：参数选择、测试指标、基线比较和复现命令。
+- [D 的 kNN 独立评测](results/d_with_knn_v1/D_统一评测与结果比较.md)：逐目标、三种子汇总和配对置信区间。
 
 - [A 阶段交付清单](reports/a_nov08_delivery.md)：本次成果与交接事项。
 - [四篇核心文献笔记](reports/literature_review.md)：研究问题、数据、方法、评价、局限和项目启发。
@@ -99,4 +102,4 @@ python -m venv .venv
 | D | 指标实现、交接完整性核验、C 逐目标自检记录的统计复算 | 获得 B 冻结标签后独立重算；纳入 A 的参考预测 |
 | E | 生物背景、基因集来源和案例规则 | 通路分析、图表和汇报 |
 
-本项目 C 的诊断结果见 `reports/c_results.md`；D 的当前复算见 `reports/d_results.md`。B 独立标签与 A 参考预测仍为空，不能将当前表述为 D 独立标签验收，也不能把缺失方法当成零分。文献里的结果属于原论文，不混入本项目结果表。
+C 的诊断结果见 `reports/c_results.md`。纳入 A 的 kNN 和 B 冻结标签后重新计算的指标见 `results/d_with_knn_v1/`。

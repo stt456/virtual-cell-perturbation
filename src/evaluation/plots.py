@@ -9,10 +9,11 @@ import numpy as np
 import pandas as pd
 
 ORDER = ["zero", "train_mean", "ridge_pca", "ridge_mean_detection", "ridge_combined",
-         "mlp_pca", "mlp_mean_detection", "mlp_combined"]
+         "mlp_pca", "mlp_mean_detection", "mlp_combined", "knn"]
 LABELS = {"zero": "无变化", "train_mean": "训练平均扰动", "ridge_pca": "Ridge PCA",
           "ridge_mean_detection": "Ridge 均值与检出率", "ridge_combined": "Ridge 组合",
-          "mlp_pca": "MLP PCA", "mlp_mean_detection": "MLP 均值与检出率", "mlp_combined": "MLP 组合"}
+          "mlp_pca": "MLP PCA", "mlp_mean_detection": "MLP 均值与检出率", "mlp_combined": "MLP 组合",
+          "knn": "k 近邻"}
 
 
 def make_figures(output, frame, summary, across, bootstrap, coverage, origin):

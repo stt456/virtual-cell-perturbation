@@ -51,3 +51,14 @@ results/d_v1_20261110/*
 *.pkl
 *.joblib
 *.log
+
+# Published snapshots of the kNN experiment and its independent evaluation.
+.venv-*/
+data/replogle_k562_essential.zip*
+!results/a_local_freeze.json
+!results/local-b-environment.txt
+!results/local-c-environment.txt
+!results/a_knn_local_v1/
+!results/a_knn_local_v1/**
+!results/d_with_knn_v1/
+!results/d_with_knn_v1/**
