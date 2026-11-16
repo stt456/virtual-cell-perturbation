@@ -1,0 +1,41 @@
+{
+  "selection": "SHA256 D_E_v1|seed|target; 3 available + 3 unavailable per seed",
+  "selection_timing": "post-hoc illustrative; not a pre-test preregistration",
+  "choices": {
+    "42": {
+      "model": "mlp_mean_detection",
+      "targets": [
+        "RRP12",
+        "MAD2L1",
+        "CCDC84",
+        "NUP98",
+        "MRPL43",
+        "DMAP1"
+      ]
+    },
+    "123": {
+      "model": "ridge_mean_detection",
+      "targets": [
+        "GRB2",
+        "LSG1",
+        "MED7",
+        "MRPL3",
+        "SMG5",
+        "POP5"
+      ]
+    },
+    "2026": {
+      "model": "mlp_mean_detection",
+      "targets": [
+        "HSPE1",
+        "EIF4G2",
+        "RAD21",
+        "PPP1R8",
+        "RANGAP1",
+        "CTNNBL1"
+      ]
+    }
+  },
+  "truth_matrices_available": true,
+  "ground_truth_missing_value": null
+}

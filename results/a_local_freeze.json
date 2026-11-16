@@ -1,0 +1,50 @@
+{
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "external_input_hashes": {
+    "data/processed/c_inputs/seed_42/split.json": "6d9c13974cd3345a2bf6ddd9f241650b2c96a7ce9d6fc1360166ee7ac28988d8",
+    "data/processed/c_inputs/seed_42/output_genes.txt": "43b9e756dd619b2080cf86fde0fa8e203dced0495e5d8318fcf4a9df1c82e117",
+    "data/processed/c_inputs/seed_42/labels_train_val.npz": "544a0ca26b9c69cc42f95a8ffc20738cadfbf058b914bc33b4149927db364c69",
+    "data/processed/c_features/seed_42/features.npz": "26b02988832aad235fcceb12090091a106287cba2d3ad91d5a87d65f4ee6f1c5",
+    "data/processed/c_inputs/seed_123/split.json": "8a0e4e32f2fe9eac350f5495c5f25d1cd7590e8f89065337b410f1ba0a5e448d",
+    "data/processed/c_inputs/seed_123/output_genes.txt": "e43c8b3ff3b12529f0051522decd52efe055a23bd72645c4490e7bf37caf35e0",
+    "data/processed/c_inputs/seed_123/labels_train_val.npz": "515264827b3b68687550d6516e9151c5d76e65d41a2e50b17f709d699f3b2e38",
+    "data/processed/c_features/seed_123/features.npz": "807d361a07fe4f00495ce3d33157c96a14d2d5d5fbf1c1f3dd164d3c9f150c2f",
+    "data/processed/c_inputs/seed_2026/split.json": "9f58cd5b60ff919d5e36b2ecfba758e12f267a273f250cf993808142ce76f2d5",
+    "data/processed/c_inputs/seed_2026/output_genes.txt": "dd7d89660be14d61b67e22255e76f04a32b79fba4e10a8e6953563eea7a6032a",
+    "data/processed/c_inputs/seed_2026/labels_train_val.npz": "334b7545d00a4984f9de4d7ec98c52da4e5cb09316e8e1767fb361879d1ff46d",
+    "data/processed/c_features/seed_2026/features.npz": "85e6f07842c72a0adfa2b29e8494d9c66e719275e1d4201baf241a4542b7d8de"
+  },
+  "mode": "locally_rebuilt_c_features",
+  "original_c_freeze_sha256": "4ccf7c3a7642513767f9e69339b83c3afe26c9558d914f3d7e7d9931e00b913f",
+  "tolerance": 1e-10,
+  "verification": {
+    "42": {
+      "ridge_validation_max_abs_difference": 3.186340080674199e-14,
+      "ridge_training_label_mean_max_abs_difference": 2.7755575615628914e-16,
+      "ridge_training_feature_mean_max_abs_difference": 2.697495005143935e-16,
+      "ridge_training_feature_std_max_abs_difference": 5.689893001203927e-16,
+      "feature_sha256_matches_original": false,
+      "original_feature_sha256": "2f6f503240c0243661a0e3c638ebc99806d5714e7e8b0401b73810b4141b5387"
+    },
+    "123": {
+      "ridge_validation_max_abs_difference": 4.5047299224165727e-14,
+      "ridge_training_label_mean_max_abs_difference": 4.440892098500626e-16,
+      "ridge_training_feature_mean_max_abs_difference": 6.084542591988651e-16,
+      "ridge_training_feature_std_max_abs_difference": 4.822531263215524e-16,
+      "feature_sha256_matches_original": false,
+      "original_feature_sha256": "fb565380f7d5adae65d1978c0806b9172d562c034194b1543d7d1a0652e7dda3"
+    },
+    "2026": {
+      "ridge_validation_max_abs_difference": 3.091971123581061e-14,
+      "ridge_training_label_mean_max_abs_difference": 2.7755575615628914e-16,
+      "ridge_training_feature_mean_max_abs_difference": 2.0122792321330962e-16,
+      "ridge_training_feature_std_max_abs_difference": 1.5959455978986625e-16,
+      "feature_sha256_matches_original": false,
+      "original_feature_sha256": "b4d8f3c04f35112ce5bde3d87fc5068e1089092519ebf702119d958094ef7eab"
+    }
+  }
+}

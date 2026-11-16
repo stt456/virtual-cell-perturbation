@@ -15,6 +15,9 @@ def write_reports(output, base, frozen, audit, frame, summary, across, bootstrap
     independent = origin.startswith("D_")
     source = "D 使用冻结的 B 标签独立计算" if independent else "D 对 C 自检逐目标记录的统计复算"
     main = across[(across.split == "test") & (across.subset == "all")].set_index("model")
+    reference_models = sorted(set(main.index) - set(frozen["models"]))
+    reference_note = ("A 的参考模型已纳入：" + "、".join(reference_models) + "。"
+                      if reference_models else "本次没有 A 的参考预测。")
     baseline = main.loc["train_mean", "mse_mean"]
     selected = pd.read_csv(output / "validation_selected_across_seeds.csv")
     selected = selected[(selected.split == "test") & (selected.subset == "all")].iloc[0]
@@ -32,8 +35,8 @@ def write_reports(output, base, frozen, audit, frame, summary, across, bootstrap
              "每种子按 760 个训练目标、162 个验证目标和 164 个测试目标进行记录；同一目标未在该种子的训练、验证、测试声明中交叉。"
              "每种子输出 2000 个基因，同一种子内所有方法使用完全相同的顺序。输出基因随种子而变，跨种子结果是三套实验的描述性均值。"
              "未合并不同种子的重复目标进行独立样本推断。", "",
-             "已纳入无变化、训练平均扰动、Ridge 的三种表示和 MLP 的三种表示，共 8 种方法、24 个测试预测包。"
-             "A 的 kNN 或 GEARS 未提供，不计作零分，也不据此比较其性能。", "",
+             f"已纳入无变化、训练平均扰动、Ridge 和 MLP 的各类表示，共 {len(main)} 种方法。"
+             + reference_note, "",
              "## 2 指标和统计口径", "",
              "- MSE：先在每个目标的输出基因上计算平方误差均值，再对目标等权平均，不按细胞数量加权。",
              "- 平均扰动基线：先得到每个训练扰动的平均变化，再对训练扰动等权平均；本轮仅核对 C 保存的训练均值及对应预测。独立模式会从 B 的训练标签重算并核验。",
@@ -131,7 +134,7 @@ def write_reports(output, base, frozen, audit, frame, summary, across, bootstrap
 *{box-sizing:border-box}body{margin:0;background:#f5f6f7;color:#20252a;font:15px/1.7 'Microsoft YaHei',sans-serif}main{max-width:1180px;margin:auto;padding:40px 28px}h1{font-size:28px;margin:6px 0}h2{font-size:20px;margin:26px 0 12px}p{max-width:960px}.scope{color:#5b4830;border-left:3px solid #9b7c48;padding-left:16px}.stats{display:flex;gap:40px;padding:18px 0;border-bottom:1px solid #d1d6da}.stats strong{display:block;font-size:24px}.muted{color:#63707b;font-size:13px}section{margin:24px 0 38px}img{max-width:100%;height:auto;background:white}table{border-collapse:collapse;width:100%;background:white;font-size:13px}th,td{padding:10px 12px;border-bottom:1px solid #d9dfe3;text-align:right}th:first-child,td:first-child{text-align:left}th{background:#edf0f2;white-space:nowrap}select{padding:8px 12px;border:1px solid #c2cbd1;border-radius:4px;background:white;font:inherit;margin-right:18px}label{display:inline-block}.scroll{overflow:auto}.good{color:#245773}.negative{color:#814d48}.legend{margin:10px 0;color:#596773}a{color:#245773}footer{border-top:1px solid #cbd1d5;padding:18px 0;color:#5f6a74;font-size:13px}@media(max-width:600px){main{padding:20px 14px}.stats{gap:20px;flex-wrap:wrap}h1{font-size:24px}}
 </style><main><p class="muted">K562 CRISPRi · 未见目标扰动 · D 统计评测 · 2026-11-07</p>
 <h1>统一评测与结果比较</h1><p class="scope" id="scope"></p>
-<div class="stats"><div><strong>8</strong>已提供方法</div><div><strong>3 × 164</strong>种子 × 测试目标</div><div><strong>36.0–44.5%</strong>目标表示覆盖率</div></div>
+<div class="stats"><div><strong>__METHOD_COUNT__</strong>已提供方法</div><div><strong>3 × 164</strong>种子 × 测试目标</div><div><strong>36.0–44.5%</strong>目标表示覆盖率</div></div>
 <p>训练平均扰动是主要对照。模型的改善应同时结合覆盖率、有效相关目标数和目标级置信区间判断。</p>
 <section><h2>模型指标交互表</h2><label>目标子集 <select id="subset"><option value="all">全部目标</option><option value="available">表示可用</option><option value="unavailable">表示缺失</option><option value="strength_weak">弱响应</option><option value="strength_medium">中等响应</option><option value="strength_strong">强响应</option></select></label>
 <label>实验 <select id="seed"><option value="mean">三种子均值 ± 标准差</option><option>42</option><option>123</option><option>2026</option></select></label>
@@ -145,6 +148,7 @@ const metrics=[['mse','MSE'],['pearson','Pearson'],['spearman','Spearman'],['top
     (output / "D_结果浏览.html").write_text(
         template.replace("__IMAGES__", "\n".join(images))
         .replace("__DATA__", data)
+        .replace("__METHOD_COUNT__", str(len(main)))
         .replace("2026-11-07", evaluation_date),
         encoding="utf-8",
     )

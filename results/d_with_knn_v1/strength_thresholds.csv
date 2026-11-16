@@ -1,0 +1,7 @@
+﻿seed,split,rms_q1,rms_q2,definition
+42,test,0.07518883688205495,0.106244347223689,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc
+42,val,0.08222022590227071,0.12111669379682599,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc
+123,test,0.07334018260637684,0.10679906270801862,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc
+123,val,0.07807194501729742,0.11109708093555769,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc
+2026,test,0.07736846217631956,0.10746324628357623,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc
+2026,val,0.07689735471325924,0.10982946878631512,sqrt(mean(delta_true**2)); within-seed tertiles; post-hoc

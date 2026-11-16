@@ -1,0 +1,27 @@
+{
+  "seed": 2026,
+  "synthetic": false,
+  "representation": "combined",
+  "k_candidates": [
+    3,
+    5,
+    10,
+    20
+  ],
+  "selected_k": 20,
+  "validation_macro_mse": {
+    "3": 0.009589150783549726,
+    "5": 0.00931361798192988,
+    "10": 0.009075774182765558,
+    "20": 0.008973218416656076
+  },
+  "input_hashes": {
+    "data/processed/c_inputs/seed_2026/split.json": "9f58cd5b60ff919d5e36b2ecfba758e12f267a273f250cf993808142ce76f2d5",
+    "data/processed/c_inputs/seed_2026/output_genes.txt": "dd7d89660be14d61b67e22255e76f04a32b79fba4e10a8e6953563eea7a6032a",
+    "data/processed/c_inputs/seed_2026/labels_train_val.npz": "334b7545d00a4984f9de4d7ec98c52da4e5cb09316e8e1767fb361879d1ff46d",
+    "data/processed/c_features/seed_2026/features.npz": "85e6f07842c72a0adfa2b29e8494d9c66e719275e1d4201baf241a4542b7d8de"
+  },
+  "validation_sha256": "297405521de132671c5780f7b17e63d94ead18be0365f00288edbe345112eafc",
+  "test_sha256": "8de6805da2f9390499ec542cb85a017afdea75c05a931b987a5a887d23fecbd7",
+  "test_labels_accessed": false
+}

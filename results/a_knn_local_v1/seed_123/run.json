@@ -1,0 +1,27 @@
+{
+  "seed": 123,
+  "synthetic": false,
+  "representation": "combined",
+  "k_candidates": [
+    3,
+    5,
+    10,
+    20
+  ],
+  "selected_k": 20,
+  "validation_macro_mse": {
+    "3": 0.009831195119569345,
+    "5": 0.00946953895644937,
+    "10": 0.00925996210758396,
+    "20": 0.009155971078862978
+  },
+  "input_hashes": {
+    "data/processed/c_inputs/seed_123/split.json": "8a0e4e32f2fe9eac350f5495c5f25d1cd7590e8f89065337b410f1ba0a5e448d",
+    "data/processed/c_inputs/seed_123/output_genes.txt": "e43c8b3ff3b12529f0051522decd52efe055a23bd72645c4490e7bf37caf35e0",
+    "data/processed/c_inputs/seed_123/labels_train_val.npz": "515264827b3b68687550d6516e9151c5d76e65d41a2e50b17f709d699f3b2e38",
+    "data/processed/c_features/seed_123/features.npz": "807d361a07fe4f00495ce3d33157c96a14d2d5d5fbf1c1f3dd164d3c9f150c2f"
+  },
+  "validation_sha256": "5e3066a329d196d9b735b0683abc05c475f8771e31121a2f62a3c2d15cca8478",
+  "test_sha256": "bbdfafe4519b65816e1b67aeb153398953d166cd2b9a26a67d4d44986029e198",
+  "test_labels_accessed": false
+}
