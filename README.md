@@ -8,6 +8,9 @@
 
 ## 先看这些文件
 
+- [D→E 案例交付说明](docs/d_e_handoff.md)：案例规则、2000 基因背景、复现步骤，以及 GitHub 合并内容与 E 专用材料的区分。
+- [D 案例评测与通路结果](reports/d_e_20261124.md)：18 个真实案例的指标重算、Reactome 通路比较与 E 包索引。
+
 - [A 的 kNN 实验报告](reports/a_knn_experiment.md)：参数选择、测试指标、基线比较和复现命令。
 - [D 的 kNN 独立评测](results/d_with_knn_v1/D_统一评测与结果比较.md)：逐目标、三种子汇总和配对置信区间。
 
