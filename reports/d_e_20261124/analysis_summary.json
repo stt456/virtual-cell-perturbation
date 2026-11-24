@@ -1,0 +1,34 @@
+{
+  "n_cases": 18,
+  "n_case_metric_rows": 54,
+  "n_pathway_tests": 23238,
+  "n_significant": 94,
+  "background": [
+    {
+      "seed": 42,
+      "background_n": 2000,
+      "annotated_n": 1205,
+      "unannotated_n": 795,
+      "tested_pathways": 437
+    },
+    {
+      "seed": 123,
+      "background_n": 2000,
+      "annotated_n": 1211,
+      "unannotated_n": 789,
+      "tested_pathways": 429
+    },
+    {
+      "seed": 2026,
+      "background_n": 2000,
+      "annotated_n": 1199,
+      "unannotated_n": 801,
+      "tested_pathways": 425
+    }
+  ],
+  "reactome_sha256": "a9feaa3ae9bbb746422cba77a669813de627fb15b7d7478b67c8d57020ec26ae",
+  "case_metric_max_difference": 9.71445146547012e-17,
+  "selection_verified_from_published_population": true,
+  "full_B_labels_present": false,
+  "source_commit": "e280f87b7696dc8a0fbb48870691d83c0c458fe0"
+}
